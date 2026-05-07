@@ -1,0 +1,23 @@
+# 聊天显示称号（关闭状态下即便写着%doutitle_state%变量也不会显示称号，只有打开状态下会显示）
+ischat: true
+
+# 切换称号的冷却时间,单位秒 -设置0为关闭该功能
+Coolingtime: 1
+
+# 数据库设置
+database:
+  # 数据库类型 sqlite 或 mysql (暂未支持mysql)
+  type: sqlite
+  # mysql配置（暂未支持）
+  host: localhost
+  port: 3306
+  database: doutitle
+  username: root
+  password: ""
+
+# 默认称号设置
+default:
+  # 无称号时显示的文本
+  no_title: ""
+  # 称号格式（%title%会被称号名替换）
+  format: "&7[%title%&7]"

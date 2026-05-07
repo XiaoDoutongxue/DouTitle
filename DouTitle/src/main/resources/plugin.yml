@@ -1,0 +1,20 @@
+name: DouTitle
+version: 1.0.0
+main: org.doutitle.DouTitle
+api-version: "1.12"
+depend: [PlaceholderAPI, Vault, PlayerPoints]
+softdepend: []
+
+commands:
+  doutitle:
+    description: 称号插件主命令
+    usage: /doutitle <open/shop/create/give/delete/reload>
+    aliases: [dt, title]
+
+permissions:
+  doutitle.admin:
+    description: 管理员权限
+    default: op
+  doutitle.user:
+    description: 用户权限
+    default: true

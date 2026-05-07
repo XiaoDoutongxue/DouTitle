@@ -1,0 +1,236 @@
+# GUI标题
+title: "&7[&b称号商店&7]"
+
+# GUI大小（必须是9的倍数，如9,18,27,36,45,54）
+size: 54
+
+# 打开GUI的音效（留空则无音效）
+# 音效列表: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+sound: ""
+
+# GUI称号可以显示的位置(其余位置用于配置自定义按钮)
+# 这些槽位会按顺序显示称号（每页最多显示的数量等于这个列表的长度）
+index: "10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43"
+
+# ============================================================
+# 称号商城列表
+# ============================================================
+shops:
+  # 第一个称号
+  - name: "&7[&c小豆&7]"
+    ID: "0"
+    index: 1
+    material: "421"
+    isEnchant: true
+    lore:
+      - ""
+      - "&7这个称号是一个很牛逼的"
+      - "&a获得方式:"
+      - "%doutitle_progress%"
+      - ""
+      - "&6价格: 100点券"
+    # 获取条件(称号也可以根据条件来获取)
+    conditions:
+      - type: "BLOCK_BREAK"
+        block: "STONE"
+        amount: 1000
+        # 可选：点券价格
+        points: 100
+        # 可选：金币价格
+        money: 0
+
+  # 第二个称号 - 免费获取
+  - name: "&7[&a新手&7]"
+    ID: "1"
+    index: 2
+    material: "NAME_TAG"
+    isEnchant: false
+    lore:
+      - ""
+      - "&7新手专属称号"
+      - "&a获得方式: 免费"
+      - "%doutitle_progress%"
+    conditions:
+      - type: "FREE"
+
+  # 第三个称号 - 点券购买
+  - name: "&7[&6钻石&7]"
+    ID: "2"
+    index: 3
+    material: "DIAMOND"
+    isEnchant: true
+    lore:
+      - ""
+      - "&7闪耀的钻石称号"
+      - "&a获得方式:"
+      - "&6价格: 500点券"
+    conditions:
+      - type: "POINTS"
+        amount: 500
+
+  # 第四个称号 - 金币购买
+  - name: "&7[&e金币&7]"
+    ID: "3"
+    index: 4
+    material: "GOLD_INGOT"
+    isEnchant: false
+    lore:
+      - ""
+      - "&7土豪专属称号"
+      - "&a获得方式:"
+      - "&6价格: 10000金币"
+    conditions:
+      - type: "MONEY"
+        amount: 10000
+
+  # 第五个称号 - 击杀玩家100个
+  - name: "&7[&4杀手&7]"
+    ID: "4"
+    index: 5
+    material: "DIAMOND_SWORD"
+    isEnchant: true
+    lore:
+      - ""
+      - "&7击杀100名玩家获得"
+      - "&a获得方式:"
+      - "%doutitle_progress%"
+    conditions:
+      - type: "KILL_PLAYER"
+        amount: 100
+
+  # 第六个称号 - 击杀僵尸1000只
+  - name: "&7[&2僵尸猎手&7]"
+    ID: "5"
+    index: 6
+    material: "ROTTEN_FLESH"
+    isEnchant: false
+    lore:
+      - ""
+      - "&7击杀1000只僵尸获得"
+      - "&a获得方式:"
+      - "%doutitle_progress%"
+    conditions:
+      - type: "KILL_MOB"
+        mob: "ZOMBIE"
+        amount: 1000
+
+  # 第七个称号 - 行走100000格
+  - name: "&7[&b行者&7]"
+    ID: "6"
+    index: 7
+    material: "LEATHER_BOOTS"
+    isEnchant: false
+    lore:
+      - ""
+      - "&7行走100000格获得"
+      - "&a获得方式:"
+      - "%doutitle_progress%"
+    conditions:
+      - type: "WALK_DISTANCE"
+        amount: 100000
+
+  # 第八个称号 - 放置10000个石头
+  - name: "&7[&8建筑师&7]"
+    ID: "7"
+    index: 8
+    material: "STONE"
+    isEnchant: false
+    lore:
+      - ""
+      - "&7放置10000个石头获得"
+      - "&a获得方式:"
+      - "%doutitle_progress%"
+    conditions:
+      - type: "BLOCK_PLACE"
+        block: "STONE"
+        amount: 10000
+
+  # 第九个称号 - 钓鱼100条鱼
+  - name: "&7[&3渔夫&7]"
+    ID: "8"
+    index: 9
+    material: "FISHING_ROD"
+    isEnchant: false
+    lore:
+      - ""
+      - "&7钓鱼100条获得"
+      - "&a获得方式:"
+      - "%doutitle_progress%"
+    conditions:
+      - type: "FISH_CATCH"
+        amount: 100
+
+# ============================================================
+# 上一页按钮配置
+# ============================================================
+previouspage:
+  enable: true
+  index: 45
+  sound: ""
+  name: "&a上一页"
+  lore:
+    - '&8▪ &7点击打开上一页'
+    - '&8▪ &7当前页码 &a${pageNum}'
+    - '&8▪ &7总页码数 &a${count}'
+  material: "PAPER"
+  isEnchant: false
+
+# ============================================================
+# 下一页按钮配置
+# ============================================================
+nextpage:
+  enable: true
+  index: 53
+  sound: ""
+  name: "&a下一页"
+  lore:
+    - '&8▪ &7点击打开下一页'
+    - '&8▪ &7当前页码 &a${pageNum}'
+    - '&8▪ &7总页码数 &a${count}'
+  material: "PAPER"
+  isEnchant: false
+
+# ============================================================
+# 称号仓库按钮
+# ============================================================
+open:
+  enable: true
+  index: 4
+  name: "&a称号仓库"
+  lore:
+    - ""
+    - "&f- &7点击打开称号仓库"
+  material: "PAPER"
+  isEnchant: false
+  command:
+    - 'doutitle open'
+
+# ============================================================
+# 自定义按钮（可以无限扩展）
+# ============================================================
+custom:
+  # 返回按钮示例
+  back:
+    enable: true
+    index: 49
+    name: "&c返回"
+    material: "PLAYER_HEAD"
+    headBase: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjllYTFkODYyNDdmNGFmMzUxZWQxODY2YmNhNmEzMDQwYTA2YzY4MTc3Yzc4ZTQyMzE2YTEwOThlNjBmYjdkMyJ9fX0="
+    isEnchant: false
+    lore:
+      - '&f- &7点击返回'
+    custom-model-data: 0
+    command:
+      - 'doutitle help'
+
+  # 购买点券按钮示例（需要其他插件支持）
+  buy_points:
+    enable: false
+    index: 50
+    name: "&6购买点券"
+    material: "EMERALD"
+    isEnchant: true
+    lore:
+      - '&f- &7点击购买点券'
+    command:
+      - 'points shop'

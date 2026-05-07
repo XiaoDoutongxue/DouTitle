@@ -1,0 +1,104 @@
+# GUI标题
+title: "&7[&b称号仓库&7]"
+
+# GUI大小（必须是9的倍数）
+size: 54
+
+# 打开GUI的音效
+sound: ""
+
+# ============================================================
+# 称号显示配置
+# ============================================================
+open:
+  # 称号默认显示名称（%doutitlename%会被称号名替换）
+  name: "${doutitlename}"
+
+  # GUI称号可以显示的位置(其余位置用于配置自定义按钮)
+  index: "10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43"
+
+  # 称号未使用的默认材质
+  material: "NAME_TAG"
+
+  # 称号使用中的默认材质
+  usematerial: "BOOK"
+
+  # 点击音效
+  sound: ""
+
+  # 称号lore-多层级，某部分有会显示，没有不会显示出来，留空表示不显示这个层级
+  lore:
+    - ''
+    - '&8▪ &a到期时间: &7%doutitle_expirationtime%'
+
+# 称号状态显示文本
+inUse: "&a✓ 使用中"
+notUse: "&c✗ 未使用"
+
+# 按钮文本
+useButton: "&a点击佩戴"
+noUseButton: "&c点击取消佩戴"
+
+# ============================================================
+# 上一页按钮配置
+# ============================================================
+previouspage:
+  enable: true
+  index: 45
+  sound: ""
+  name: "&a上一页"
+  lore:
+    - '&8▪ &7点击打开上一页'
+    - '&8▪ &7当前页码 &a${pageNum}'
+    - '&8▪ &7总页码数 &a${count}'
+  material: "PAPER"
+  isEnchant: false
+
+# ============================================================
+# 下一页按钮配置
+# ============================================================
+nextpage:
+  enable: true
+  index: 53
+  sound: ""
+  name: "&a下一页"
+  lore:
+    - '&8▪ &7点击打开下一页'
+    - '&8▪ &7当前页码 &a${pageNum}'
+    - '&8▪ &7总页码数 &a${count}'
+  material: "PAPER"
+  isEnchant: false
+
+# ============================================================
+# 称号商城按钮
+# ============================================================
+open:
+  enable: true
+  index: 4
+  name: "&a称号商城"
+  lore:
+    - ""
+    - "&f- &7点击打开称号商城"
+  material: "PAPER"
+  isEnchant: false
+  command:
+    - 'doutitle shop'
+
+# ============================================================
+# 自定义按钮（可以无限扩展）
+# ============================================================
+custom:
+  # 返回按钮
+  back:
+    enable: true
+    index: 49
+    name: "&c返回"
+    material: "PLAYER_HEAD"
+    headBase: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjllYTFkODYyNDdmNGFmMzUxZWQxODY2YmNhNmEzMDQwYTA2YzY4MTc3Yzc4ZTQyMzE2YTEwOThlNjBmYjdkMyJ9fX0="
+    isEnchant: false
+    lore:
+      - '&f- &7点击返回'
+    custom-model-data: 0
+    command:
+      - 'doutitle help'
+
